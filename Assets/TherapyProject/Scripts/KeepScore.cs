@@ -25,7 +25,7 @@ public class KeepScore : MonoBehaviour
         {
             Debug.Log("Is Hand");
             scoreManager.AddPoint();
-            Destroy (gameObject);
+            Destroy (this.gameObject);
         }
 
     }

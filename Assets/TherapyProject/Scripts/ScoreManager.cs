@@ -1,11 +1,12 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; 
 
 public class ScoreManager : MonoBehaviour
 {
-    Text scoreText;
+    TextMeshProUGUI scoreText;
     int _currentScore;
     public int _maxScore;
 
@@ -13,17 +14,17 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText = GetComponent<Text>();
+        scoreText = this.GetComponent<TextMeshProUGUI>();
     }
 
     public void AddPoint()
     {
         
         _currentScore++;
-        scoreText.text = _currentScore.ToString();
+        scoreText.text = "捕获蝴蝶: "+ _currentScore.ToString();
         if (_currentScore == _maxScore)
         {
-            scoreText.text = "You Won";
+            scoreText.text = "胜利！";
         }
     }
 
