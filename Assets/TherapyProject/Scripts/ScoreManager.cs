@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
     TextMeshProUGUI scoreText;
     int _currentScore;
     public int _maxScore;
-
+    public string nextScene; // show next level or exit 
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,8 @@ public class ScoreManager : MonoBehaviour
         if (_currentScore == _maxScore)
         {
             scoreText.text = "胜利！";
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
+
         }
     }
 
